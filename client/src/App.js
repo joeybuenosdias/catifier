@@ -1,9 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-// import Cats from './components/Cats';
-
-const Cats = () => <div>Cats</div>;
+import Cats from './components/Cats';
 
 const App = () => (
 	<div>
