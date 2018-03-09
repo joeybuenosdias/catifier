@@ -1,5 +1,5 @@
 # Welcome to catifier
-![alt text](https://png.icons8.com/metro/1600/black-cat.png "Dedicated to Velma and Roxy")
+![alt text](https://d30y9cdsu7xlg0.cloudfront.net/png/707608-200.png "Dedicated to Velma and Roxy")
 Meow Hello, Welcome to catifier.
 A simple web application that allows users to insert phrases, quotes, terms, sentences or words and watch them become catified! Meow! 
 
