@@ -15,7 +15,7 @@ import CatHeader from './CatHeader';
 import { catifyAlgorithim } from '../actions/cats';
 
 class Cats extends React.Component {
-	state = { phrase: '' };
+	state = { phrase: '', catifiedPhrase: '' };
 
 	handleChange = (e) => {
 		this.setState({ phrase: e.target.value });
@@ -26,18 +26,12 @@ class Cats extends React.Component {
 		let { phrase } = this.state;
 		//KITTY ALGORITHIM GOES HERE, PASS THE PHRASE
 		let newPhrase = catifyAlgorithim(phrase);
-		console.log(newPhrase);
-		this.setState({ phrase: '' });
+		this.setState({ phrase: '', catifiedPhrase: newPhrase });
 	};
 
 	render() {
 		return (
-			<Grid
-				centered
-				container
-				style={{ height: '90vh' }}
-				verticalAlign="middle"
-			>
+			<Grid centered container style={{ height: '90vh' }} verticalAlign="top">
 				<Grid.Column computer={10} largeScreen={12} tablet={14} mobile={16}>
 					<Segment raised textAlign="center">
 						<CatHeader />
@@ -54,6 +48,14 @@ class Cats extends React.Component {
 							</Button>
 						</Form>
 					</Segment>
+					{this.state.catifiedPhrase && (
+						<Segment textAlign="center" vertical raised>
+							<Header as="h2" color="grey">
+								New Cat Phrase:
+							</Header>
+							<Header as="h4">{this.state.catifiedPhrase}</Header>
+						</Segment>
+					)}
 				</Grid.Column>
 			</Grid>
 		);

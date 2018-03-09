@@ -11,6 +11,7 @@ export const catifyAlgorithim = (paragraph) => {
 			case 'pause':
 				return checkedWord.replace(checkedWord, 'paws');
 			case 'feeling':
+			case 'feelings':
 				return checkedWord.replace(checkedWord, 'feline');
 			case 'clause':
 			case 'cause':
@@ -26,14 +27,16 @@ export const catifyAlgorithim = (paragraph) => {
 };
 
 const wordCatifierAlgorithim = (word) => {
+	let catPortion = word.search('cat');
+	let purrPortion = word.search('per');
 	let letters = word.split('');
-	let enterCatPuns = letters.map((letter) => {
-		switch (letter) {
-			case 'c':
-				return letter.replace(letter, 'kitty c');
-			default:
-				return letter;
-		}
-	});
-	return enterCatPuns.join('');
+	if (catPortion >= 0) {
+		let catWord = letters.splice(catPortion, 3, 'kitty-cat');
+		return letters.join('');
+	} else if (purrPortion >= 0) {
+		let purrWord = letters.splice(purrPortion, 3, 'purrrr');
+		return letters.join('');
+	} else {
+		return word;
+	}
 };
