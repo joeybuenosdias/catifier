@@ -19,6 +19,9 @@ export const catifyAlgorithim = (paragraph) => {
 			case 'kitchen':
 			case 'kidding':
 				return checkedWord.replace(checkedWord, 'kitten');
+			case 'me':
+			case 'now':
+				return checkedWord.replace(checkedWord, 'meow');
 			default:
 				return checkedWord;
 		}
